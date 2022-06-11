@@ -1,4 +1,3 @@
--- requiers MIST
 function getTableSize(t)
     local count = 0
     for _, __ in pairs(t) do
@@ -19,11 +18,12 @@ local navPoints = mist.DBs.navPoints
 
 local id_table = world.getMarkPanels( )
 
-local size = getTableSize(id_table)
+ size = getTableSize(id_table)
 
 for i, u in pairs(navPoints) do
 
 	for k, v in pairs(u) do
+		size = getTableSize(id_table)
 		trigger.action.textToAll(
 		coalition_side[i],
 		k + size,
@@ -38,3 +38,5 @@ for i, u in pairs(navPoints) do
 	end
 	size = counter
 end
+
+
